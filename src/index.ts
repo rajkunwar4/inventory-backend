@@ -4,6 +4,8 @@ import bodyParser from "body-parser";
 import cors from "cors";
 import helmet from "helmet"
 import morgan from "morgan";
+import dashboardRoutes from "./routes/dashboardRoutes"
+
 
 /* Route Imports */
 
@@ -21,9 +23,7 @@ app.use(cors());
 
 
 /* ROUTES */ 
-app.get("/hello", (req, res)=>{
-    res.send("helllo");
-})
+app.use("/dashboard", dashboardRoutes)
 
 app.get("/",(req, res)=>{
     res.send("hello welcome")
